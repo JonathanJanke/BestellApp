@@ -1,6 +1,10 @@
 @font-face {
-    font-family: 'Palanquin-Medium';
+    font-family: 'Palanquin-Dark-Medium';
     src: url("./assets/fonts/Palanquin_Dark/PalanquinDark-Medium.ttf");
+}
+@font-face {
+    font-family: 'Palanquin-Medium';
+    src: url("./assets/fonts/Palanquin/Palanquin-Medium.ttf");
 }
 
 body{
@@ -49,7 +53,7 @@ header{
 }
 
 .h1{
-    font-family: 'Palanquin-Medium';
+    font-family: 'Palanquin-Dark-Medium';
     font-size: 48px;
     color: rgba(0,0,0,0.8);
 }
@@ -58,7 +62,19 @@ header{
 }
 
 .slogan{
-    font-family: 'Palanquin-Medium';
+    font-family: 'Palanquin-Dark-Medium';
     font-size: 24px;
     color: rgba(0,0,0,0.8);
+}
+
+.category{
+    display:flex;
+    flex-direction: column;
+
+    font-family: 'Palanquin-Medium';
+}
+.category > h2 {
+    background-color: #E76C1F;
+    color: white;
+    font-size: 40px;
 }
