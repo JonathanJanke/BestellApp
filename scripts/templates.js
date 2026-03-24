@@ -2,9 +2,13 @@
 function getHTMLForMenu (category, i) {
     return `
              <div class="category">
-                <img src="" alt="">
-                <h2>${category}</h2>
-                <div id="dishes-${category}"
+                <div class="category-head">
+                    <div class="c-content"> 
+                        <img src="" alt="">
+                        <h2>${category}</h2>
+                    </div>
+                </div>
+                <div id="dishes-${category}" class="dishes"
                 </div>
              </div>`
 }

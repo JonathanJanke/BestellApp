@@ -1,11 +1,11 @@
 function init () {
     renderCategories();
 };
-
+// Renderfunktion für eingepflegte URLs schreiben
 
 function renderCategories () {
     const menu = document.getElementById("menu");
-    
+
     for (let i = 0; i < categories.length; i++) {
         let category = categories[i];
         menu.innerHTML += getHTMLForMenu(category, i);
