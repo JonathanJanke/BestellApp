@@ -29,7 +29,7 @@ function getHTMLForDishes (dish, i) {
                     </div>
              </div>`
 }
-function getHTMLForBasket (dish,count) {
+function getHTMLForBasket (count, dish, dishid) {
     return `
              <div class="basket-dish">
                     <div class="basket-dish-head">
@@ -37,15 +37,15 @@ function getHTMLForBasket (dish,count) {
                     </div>
                 <div class="basket-dish-info-main">
                     <div>
-                    <button>-</button>
-                    <span id='count${dish.id}'>${count}</span>
-                    <button onclick="addToBasket(${dish.id})">+</button>
+                    <button onclick="reduceCount(${dishid}, ${count})">-</button>
+                    <span id="count${dishid}">${count}</span>
+                    <button onclick="addToBasket(${dishid})">+</button>
                     </div>
                     <span>${dish.price}</span>
                 </div> `
 }
 
-function getHTMLForCount (count, dish) {
+function getHTMLForCount (count, dishid) {
     return `
-        <span id="count${dish.id}">${count}</span>`
+        <span id="count${dishid}">${count}</span>`
 }
