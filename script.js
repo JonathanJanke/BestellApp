@@ -31,26 +31,26 @@ function addToBasket(id){
     const basket = document.getElementById("order");
 
     let dish = menu[id];
-    let dishid = dish.id;
     if(!basketData.includes(dish.name)){
     count = 1;
     basketData.push(dish.name);
-    basket.innerHTML += getHTMLForBasket(count, dish, dishid);
+    basket.innerHTML += getHTMLForBasket(count, dish, id);
     }else{
         const renderCount= document.getElementById(`count${id}`);
         count++;
-        renderCount.innerHTML = getHTMLForCount(count, dish, dishid);
+        renderCount.innerHTML = getHTMLForCount(count, dish, id);
     }  
 }
 // Fehlt: Deletedish-Function, entsprechendes Icon und Neupositionierung
 
-function reduceCount(dishid, count) {
-    if (count.innerHTML.value === 0) {
+function reduceCount(id, count) {
+    let counter = document.getElementById(`count${id}`).value;
+    if (counter === 0) {
         deleteFromBasket();
     }else {
-        count--;
-        const renderCount= document.getElementById(`count${dishid}`);
-        renderCount.innerHTML = getHTMLForCount(count, dishid);
+        counter--;
+        const renderCount= document.getElementById(`count${id}`);
+        renderCount.innerHTML = getHTMLForCount(count, id);
     }
  // addTOBasket, nur anders herum -- Heute nach dem Schwimmen.
 }
