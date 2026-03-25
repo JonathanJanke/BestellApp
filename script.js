@@ -42,6 +42,7 @@ function addToBasket(id){
         renderCount.innerHTML = getHTMLForCount(count, dish);
     }  
 }
+// Fehlt: Deletedish-Function, entsprechendes Icon und Neupositionierung
 
 function removeFromBasket(id) {
  // addTOBasket, nur anders herum -- Heute nach dem Schwimmen.
