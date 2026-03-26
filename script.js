@@ -32,21 +32,23 @@ function addToBasket(id){
     let dish = menu[id];
     let counter = parseInt(dish.amount);
     let count = counter;
+    const msg = document.getElementById("welcome");
 
     if(!basketData.includes(dish.name)){
     count++;
     dish.amount = count.toString()
     basketData.push(dish.name);
     basket.innerHTML += getHTMLForBasket(dish, id);
+    msg.innerHTML = "";
     }else{
         const renderCount= document.getElementById(`count${id}`);
         count++;
         dish.amount = count.toString()
         renderCount.innerHTML = "";
         renderCount.innerHTML = getHTMLForCount(count);
+        changeIcon(id);
     }  
 }
-// Fehlt: Deletedish-Function, entsprechendes Icon und Neupositionierung
 
 function reduceCount(id) {
     let dish = menu[id];
@@ -64,6 +66,28 @@ function reduceCount(id) {
 
 function deleteFromBasket (id) {
     let dish = menu[id];
+    let count = 0;
+    const msg = document.getElementById("welcome");
+
+    dish.amount = count.toString();
     const basket = document.getElementById("order");
-    basket.innerHTML -= getHTMLForBasket(dish, id);
+    basket.children[id].remove();
+    basketData.splice(dish.name);
+    console.log(basketData);
+
+    if (basketData.length === 0) {
+        msg.innerHTML = "Deine Bestellung bitte."
+    }
+}
+
+function changeIcon (id){
+    const btn = document.getElementById(`remove${id}`);
+    const addbtn = document.getElementById(`addbtn${id}`);
+
+    if (btn.classList.contains("remove")) { 
+        btn.innerHTML = "-";
+        btn.classList.remove("remove");
+        addbtn.innerHTML += getHTMLForBtn(id);
+    }
+    
 }

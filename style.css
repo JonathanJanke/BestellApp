@@ -154,6 +154,12 @@ header{
 .basket-dish-info-main {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+.adjust{
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 .basket-footer{
     display: flex;
@@ -213,4 +219,17 @@ header{
     height: 200px;
     width: 180px;
     object-fit: fill;
+}
+.remove{
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.basket-dish-head{
+    display:flex;
+    align-items: center;
+
+    font-size: 12px;
 }
