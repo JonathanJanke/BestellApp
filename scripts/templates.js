@@ -12,14 +12,14 @@ function getHTMLForMenu (category) {
                 </div>
              </div>`
 }
-function getHTMLForDishes (dish, i) {
+function getHTMLForDishes (dish, i, dishPrice) {
     return `
              <div class="dish" id="${i}">
                 <img src="${dish.url}">
                 <div class="dish-info">
                     <div class="dish-info-head">
                         <h2>${dish.name}</h2>
-                        <span>${dish.price}</span>
+                        <span>${dishPrice}</span>
                     </div>
                     <div class="dish-info-main">
                         <span>${dish.description}</span>
@@ -29,7 +29,8 @@ function getHTMLForDishes (dish, i) {
                     </div>
              </div>`
 }
-function getHTMLForBasket (dish, id) {
+
+function getHTMLForBasketDish (dish, id, dishPrice) {
     return `
              <div class="basket-dish">
                     <div class="basket-dish-head" id="addbtn${id}">
@@ -45,8 +46,18 @@ function getHTMLForBasket (dish, id) {
                     <span id="count${id}">${dish.amount}</span>
                     <button onclick="addToBasket(${id})">+</button>
                     </div>
-                    <span>${dish.price}</span>
+                    <span>${dishPrice}</span>
                 </div> `
+}
+
+function getHTMLForBasketFooter () {
+    return ` 
+            <div class="total">
+                <span>Gesamtpreis: </span> 
+                <span id="total">0 €</span>
+            </div>
+            <button id="order-btn">Jetzt kaufen</button>
+    `
 }
 
 function getHTMLForCount (count) {

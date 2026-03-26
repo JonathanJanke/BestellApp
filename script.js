@@ -1,3 +1,5 @@
+let total = 0;
+
 function init () {
     renderCategories();
 };
@@ -11,6 +13,7 @@ function renderCategories () {
         menu.innerHTML += getHTMLForMenu(category, i);
     }
     renderDishes();
+    renderBasketFooter(total);
 }
 
 function renderDishes () {
@@ -22,9 +25,16 @@ function renderDishes () {
         for(let i= 0; i < dishesByCategory.length; i++){
             let dish = dishesByCategory[i];
             let dishes = document.getElementById(`dishes-${category}`);
-            dishes.innerHTML += getHTMLForDishes(dish, i);
+            let dishPrice = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(dish.price);
+            dishes.innerHTML += getHTMLForDishes(dish, i, dishPrice);
             }
     }
+}
+
+function renderBasketFooter (total) {
+    const basketFooter = document.getElementById("basket-footer");
+
+    basketFooter.innerHTML = getHTMLForBasketFooter(total);
 }
 
 function addToBasket(id){
@@ -33,12 +43,13 @@ function addToBasket(id){
     let counter = parseInt(dish.amount);
     let count = counter;
     const msg = document.getElementById("welcome");
+    let dishPrice = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(dish.price);
 
     if(!basketData.includes(dish.name)){
     count++;
     dish.amount = count.toString()
     basketData.push(dish.name);
-    basket.innerHTML += getHTMLForBasket(dish, id);
+    basket.innerHTML += getHTMLForBasketDish(dish, id, dishPrice);
     msg.innerHTML = "";
     }else{
         const renderCount= document.getElementById(`count${id}`);
@@ -47,7 +58,8 @@ function addToBasket(id){
         renderCount.innerHTML = "";
         renderCount.innerHTML = getHTMLForCount(count);
         changeIcon(id);
-    }  
+    }
+    calcTotal(id);  
 }
 
 function reduceCount(id) {
@@ -62,6 +74,7 @@ function reduceCount(id) {
         const renderCount= document.getElementById(`count${id}`);
         renderCount.innerHTML = getHTMLForCount(count);
     }
+    calcTotal(id);
 }
 
 function deleteFromBasket (id) {
@@ -78,6 +91,15 @@ function deleteFromBasket (id) {
     if (basketData.length === 0) {
         msg.innerHTML = "Deine Bestellung bitte."
     }
+}
+
+function calcTotal() {
+    const sum = menu.reduce((total, item) => {
+        return total + item.amount * item.price;
+    }, 0);
+
+    let eurSum =  new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(sum)
+    document.getElementById("total").innerHTML = eurSum;
 }
 
 function changeIcon (id){
