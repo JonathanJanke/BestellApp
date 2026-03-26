@@ -56,7 +56,7 @@ function getHTMLForBasketFooter () {
                 <span>Gesamtpreis: </span> 
                 <span id="total">0 €</span>
             </div>
-            <button id="order-btn">Jetzt kaufen</button>
+            <button id="order-btn" onclick="openDialog()">Jetzt kaufen</button>
     `
 }
 

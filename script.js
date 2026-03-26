@@ -1,3 +1,4 @@
+
 let total = 0;
 
 function init () {
@@ -110,6 +111,15 @@ function changeIcon (id){
         btn.innerHTML = "-";
         btn.classList.remove("remove");
         addbtn.innerHTML += getHTMLForBtn(id);
-    }
-    
+    }   
+}
+
+function openDialog(){
+    const dialogRef = document.getElementById("orderDialog");
+    dialogRef.showModal();
+}
+
+function closeDialog () {
+    const dialogRef = document.getElementById("orderDialog");
+    dialogRef.close();
 }

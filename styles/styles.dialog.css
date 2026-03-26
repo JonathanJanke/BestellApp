@@ -1,0 +1,40 @@
+dialog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #09212A;
+    align-items: center;
+
+    width: 1440px;
+}
+
+dialog > header {
+    display:flex;
+    justify-content: flex-end;
+    
+    height: 64px;
+    background-color: #09212A;
+    width: 1440px;
+}
+dialog > main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 240px;
+    width: 1440px;
+}
+
+dialog > main > img{
+    height: 120px;
+    object-fit: fill;
+}
+
+dialog > footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #09212A;
+    width:0;
+}
