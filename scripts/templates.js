@@ -45,7 +45,7 @@ function getHTMLForBasket (count, dish, id) {
                 </div> `
 }
 
-function getHTMLForCount (count, id) {
+function getHTMLForCount (count) {
     return `
-        <span id="count${id}">${count}</span>`
+        ${count}`
 }

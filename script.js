@@ -38,6 +38,7 @@ function addToBasket(id){
     }else{
         const renderCount= document.getElementById(`count${id}`);
         count++;
+        renderCount.innerHTML = "";
         renderCount.innerHTML = getHTMLForCount(count, dish, id);
     }  
 }
