@@ -26,7 +26,7 @@
     }
     .dish > img {
         height: 120px;
-        width: 160px;
+        width: 100px;
     }
     .title{
         flex-direction: column;
@@ -37,6 +37,7 @@
     }
     .dish{
         flex-direction: column;
+        align-items: center;
     }
     .dish-info{
         padding: 10px 0;
