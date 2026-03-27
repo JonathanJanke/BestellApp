@@ -3,10 +3,11 @@ dialog{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     background-color: #09212A;
 
-    width: 1440px;
+    width: 320px;
+    height: 320px;
+
 }
 
 dialog:not([open]) {
@@ -16,17 +17,14 @@ dialog:not([open]) {
 dialog header {
     display:flex;
     justify-content: flex-end;
-    
     height: 64px;
     background-color: #09212A;
-    width: 1440px;
 }
 dialog main{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 240px;
-    width: 1440px;
 }
 
 dialog main > img{
@@ -39,7 +37,7 @@ dialog footer {
     justify-content: center;
     align-items: center;
     background-color: #09212A;
-    width:0;
+    height: auto;
 }
 
 .propagation{

@@ -19,3 +19,38 @@
     display: flex;
     width: 100%;
 }
+
+@media (max-width: 377px){
+    h1{
+        font-size:36px;
+    }
+    .dish > img {
+        height: 120px;
+        width: 160px;
+    }
+    .title{
+        flex-direction: column;
+    }
+    .pos-rel > img{
+        height: 240px;
+        width: 240px;
+    }
+    .dish{
+        flex-direction: column;
+    }
+    .dish-info{
+        padding: 10px 0;
+    }
+    .dish-info-head > h2 {
+        font-size: 20px;
+    }
+    .dish-info-main{
+        font-size: 16px;
+    }
+    .dish-info-footer{
+        display: flex;
+        justify-content: center;
+        height: 40px;
+    }
+
+}
