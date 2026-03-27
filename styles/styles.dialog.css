@@ -5,12 +5,15 @@ dialog{
     align-items: center;
 
     background-color: #09212A;
-    align-items: center;
 
     width: 1440px;
 }
 
-dialog > header {
+dialog:not([open]) {
+     display: none; 
+}
+
+dialog header {
     display:flex;
     justify-content: flex-end;
     
@@ -18,7 +21,7 @@ dialog > header {
     background-color: #09212A;
     width: 1440px;
 }
-dialog > main{
+dialog main{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,15 +29,21 @@ dialog > main{
     width: 1440px;
 }
 
-dialog > main > img{
+dialog main > img{
     height: 120px;
     object-fit: fill;
 }
 
-dialog > footer {
+dialog footer {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #09212A;
     width:0;
+}
+
+.propagation{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }

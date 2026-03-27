@@ -117,9 +117,17 @@ function changeIcon (id){
 function openDialog(){
     const dialogRef = document.getElementById("orderDialog");
     dialogRef.showModal();
+
+    setTimeout(() => {
+        closeDialog();
+    }, 5000);
 }
 
 function closeDialog () {
     const dialogRef = document.getElementById("orderDialog");
     dialogRef.close();
+}
+
+function propagationHandler(event) {
+    event.stopPropagation();
 }
