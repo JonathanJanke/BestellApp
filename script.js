@@ -98,7 +98,7 @@ function calcTotal() {
         return total + item.amount * item.price;
     }, 0);
 
-    let eurSum =  new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(sum)
+    let eurSum =  new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(sum);
     document.getElementById("total").innerHTML = eurSum;
 }
 
@@ -116,6 +116,7 @@ function changeIcon (id){
 function openDialog(){
     const dialogRef = document.getElementById("orderDialog");
     dialogRef.showModal();
+    deleteBasket();
 
     setTimeout(() => {
         closeDialog();
@@ -129,4 +130,21 @@ function closeDialog () {
 
 function propagationHandler(event) {
     event.stopPropagation();
+}
+
+function deleteBasket () {
+    const msg = document.getElementById("welcome");
+    const basket = document.getElementById("order");
+    const total = document.getElementById("total");
+
+    basketData = [];
+    basket.innerHTML = "";
+
+    for (let i= 0; i < menu.length; i++){
+        dish = menu[i];
+        dish.amount = 0;
+    }
+    let number = 0;
+    total.innerHTML = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(number);
+    msg.innerHTML = "Deine Bestellung bitte."
 }

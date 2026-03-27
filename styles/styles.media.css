@@ -1,0 +1,44 @@
+@media (max-width: 1420px){
+    .pos-rel > img {
+        left: 38%
+    }
+}
+
+@media (max-width: 1160px){
+    .pos-rel > img {
+        left: 36%
+    }
+}
+
+@media (max-width: 990px){
+    .pos-rel > img {
+        left: 34%
+    }
+}
+
+@media (max-width: 840px){
+    .pos-rel > img {
+        left: 32%
+    }
+}
+
+@media (max-width: 650px){
+    .pos-rel > img {
+        left: 28%
+    }
+}
+
+@media (max-width: 740px){
+    
+    .menu-wrapper{
+        flex-direction: column;
+    }
+    .basket-wrapper{
+        display:none;
+    }
+
+    .c-content{
+        justify-content: center;
+    }
+    
+}

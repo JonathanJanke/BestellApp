@@ -1,6 +1,6 @@
 .basket-wrapper{
-    width: 240px;
     padding: 16px;
+    width: 30%;
 }
 
 .basket{
@@ -18,7 +18,9 @@
     font-family: 'Palanquin-Medium';
     color: #FDEADC;
 }
-
+.basket > h2 {
+    margin: 20px 8px;
+}
 #order{
     overflow: scroll;
     overflow-x: hidden;
@@ -93,17 +95,6 @@
     justify-content: space-between;
 }
 
-#basket-footer > button {
-    font-family: 'Palanquin-Medium';
-    font-size: 16px;
-    font-weight: 500;
-
-    background-color: #E76C1F;
-    color: white;
-
-    border: none;
-    border-radius: 12px;
-}
 
 /* Scrollbar-Size  */
 ::-webkit-scrollbar {

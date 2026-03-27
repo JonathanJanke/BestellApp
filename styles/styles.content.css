@@ -8,6 +8,7 @@
 .hero-section{
     background-image: url("../assets/img/hero.png");
     height: 70dvh;
+    max-width: 1440px;
     background-size: cover;
     background-position: center;
 
@@ -25,7 +26,7 @@
 .pos-rel > img {
     position: absolute;
     left: 40%;
-    bottom: -24%;
+    bottom: -20%;
 
     height: 320px;
     width: 320px;
@@ -45,6 +46,23 @@
     padding-top: 60px;
 }
 
+.title { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.rating{
+    display: flex;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
+
+    height: auto;
+}
+
 .h1{
     font-family: 'Palanquin-Dark-Medium';
     font-size: 48px;
@@ -58,13 +76,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     flex:1;
 }
 .menu-wrapper{
     display:flex;
     flex-direction: row;
     justify-content: center;
-    max-width: 1440px;
 }
 
 .category{

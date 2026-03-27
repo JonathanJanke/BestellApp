@@ -25,7 +25,7 @@ function getHTMLForDishes (dish, i, dishPrice) {
                         <span>${dish.description}</span>
                     </div>
                     <div class="dish-info-footer">
-                        <button onclick="addToBasket(${dish.id})">Add to basket</button>
+                        <button class="btn-addToBasket" onclick="addToBasket(${dish.id})">Add to basket</button>
                     </div>
              </div>`
 }
