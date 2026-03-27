@@ -136,9 +136,9 @@ function openDialog(){
     dialogRef.showModal();
     deleteBasket();
 
-    // setTimeout(() => {
-    //     closeDialog();
-    // }, 5000);
+    setTimeout(() => {
+        closeDialog();
+    }, 5000);
 }
 
 function closeDialog () {
