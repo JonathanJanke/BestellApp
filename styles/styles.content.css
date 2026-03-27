@@ -16,6 +16,21 @@
     align-items: center;
     flex-direction: column;
 }
+.pos-rel{
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+}
+.pos-rel > img {
+    position: absolute;
+    left: 40%;
+    bottom: -24%;
+
+    height: 320px;
+    width: 320px;
+
+}
 
 .slogan{
     display: flex;
@@ -26,6 +41,8 @@
     font-family: 'Palanquin-Dark-Medium';
     font-size: 24px;
     color: rgba(0,0,0,0.8);
+
+    padding-top: 60px;
 }
 
 .h1{
@@ -68,6 +85,7 @@
 .c-content{
     display:flex;
     flex: 1;
+    padding: 0 12px;
     justify-content: flex-start;
 }
 .c-content > h2 {
