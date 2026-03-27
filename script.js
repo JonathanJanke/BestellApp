@@ -87,6 +87,8 @@ function deleteFromBasket (id) {
 
     dish.amount = count.toString();
     const basket = document.getElementById("order");
+
+
     basket.children[id].remove();
     basketData.splice(dish.name);
 
@@ -130,8 +132,6 @@ function openDialog(){
 function closeDialog () {
     const dialogRef = document.getElementById("orderDialog");
     dialogRef.close();
-    const dialogBasketRef = document.getElementById("mobile-basket");
-    dialogBasketRef.close();
 }
 
 function propagationHandler(event) {
@@ -155,3 +155,12 @@ function deleteBasket () {
     msg.innerHTML = "Deine Bestellung bitte."
 }
 
+function updateCartCount() {
+    const countElement = document.getElementById("cartCount");
+    countElement.textContent = basketData.length;
+}
+
+function showBasket() {
+    basket = document.getElementById("showBasket").classList.add("show");
+    basket = document.getElementById("basket").classList.add("show");
+}

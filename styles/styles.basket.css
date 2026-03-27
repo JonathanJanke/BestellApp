@@ -111,3 +111,7 @@
   background: #888;
   border-radius: 16px;
 }
+
+.d_none{
+    display: none;
+}

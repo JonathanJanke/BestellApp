@@ -23,5 +23,4 @@ const menu = [
 const categories = ["Antipasto", "Primo", "Secondo", "Contorno","Dolce"]
 
 let basketData= [];
-let basketDataMobile= [];
 let basketPrices = [];
