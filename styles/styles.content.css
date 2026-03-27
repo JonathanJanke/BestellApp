@@ -25,8 +25,10 @@
 }
 .pos-rel > img {
     position: absolute;
-    left: 40%;
+    left: 50%;
     bottom: -20%;
+
+    transform: translateX(-50%);
 
     height: 320px;
     width: 320px;
@@ -113,3 +115,38 @@
     font-size: 40px;
 }
 
+.mobile-nav{
+    display: none;
+
+    justify-content: center;
+    padding: 12px 0;
+    background-color: #363534;
+    height: auto;
+}
+.mobile-nav > svg{
+    height: 80px;
+    width: 80px;
+}
+.cart-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-icon {
+    width: 40px;
+    height: auto;
+}
+
+.cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    min-width: 18px;
+    text-align: center;
+}

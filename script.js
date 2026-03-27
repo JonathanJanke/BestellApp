@@ -59,8 +59,10 @@ function addToBasket(id){
         renderCount.innerHTML = getHTMLForCount(count);
         changeIcon(id);
     }
-    calcTotal(id);  
+    calcTotal(id);
+    updateCartCount();  
 }
+
 
 function reduceCount(id) {
     let dish = menu[id];
@@ -75,6 +77,7 @@ function reduceCount(id) {
         renderCount.innerHTML = getHTMLForCount(count);
     }
     calcTotal(id);
+    updateCartCount();
 }
 
 function deleteFromBasket (id) {
@@ -86,11 +89,12 @@ function deleteFromBasket (id) {
     const basket = document.getElementById("order");
     basket.children[id].remove();
     basketData.splice(dish.name);
-    console.log(basketData);
 
     if (basketData.length === 0) {
         msg.innerHTML = "Deine Bestellung bitte."
     }
+    calcTotal(id);
+    updateCartCount();
 }
 
 function calcTotal() {
@@ -126,6 +130,8 @@ function openDialog(){
 function closeDialog () {
     const dialogRef = document.getElementById("orderDialog");
     dialogRef.close();
+    const dialogBasketRef = document.getElementById("mobile-basket");
+    dialogBasketRef.close();
 }
 
 function propagationHandler(event) {
@@ -148,3 +154,4 @@ function deleteBasket () {
     total.innerHTML = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(number);
     msg.innerHTML = "Deine Bestellung bitte."
 }
+
