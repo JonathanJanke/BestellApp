@@ -59,6 +59,9 @@ function addToBasket(id){
         renderCount.innerHTML = getHTMLForCount(count);
         changeIcon(id);
     }
+
+    
+
     calcTotal(id);
     updateCartCount();  
 }
@@ -87,10 +90,19 @@ function deleteFromBasket (id) {
 
     dish.amount = count.toString();
     const basket = document.getElementById("order");
+    
+    const bDataIndex = basketData.findIndex(basketData => basketData === menu[id].name);
 
+    if (bDataIndex !== -1) {
+    basketData.splice(bDataIndex, 1);
+    }
 
-    basket.children[id].remove();
-    basketData.splice(dish.name);
+    for (let i = 0; i < basket.children.length; i++){
+        const name = basket.children[i].querySelector(".basket-dish-head h2").textContent;
+        if (dish.name === name){
+            basket.children[i].remove();
+        }
+    }
 
     if (basketData.length === 0) {
         msg.innerHTML = "Deine Bestellung bitte."
