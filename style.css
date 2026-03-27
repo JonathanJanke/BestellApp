@@ -15,10 +15,12 @@ body{
     flex-direction: column;
     align-items: center;
 }
+
 main{
     max-width: 1440px;
     width: 100%;
 }
+
 header{
     position: absolute;
     top: 0;
@@ -31,8 +33,13 @@ header{
 
     display: flex;
     justify-content: center;
-
 }
+
+.burgermenu {
+    height: 60px;
+    width: 60px;
+}
+
 footer{
     font-family: 'Palanquin-Medium';
     font-size: 16px;
