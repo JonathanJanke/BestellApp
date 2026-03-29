@@ -60,11 +60,6 @@ function getHTMLForBasketFooter () {
     `
 }
 
-function getHTMLForCount (count) {
-    return `
-        ${count}`
-}
-
 function getHTMLForBtn (id) {
     return `
             <svg class="delete" onclick="deleteFromBasket(${id})" width="40px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

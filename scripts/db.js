@@ -20,7 +20,7 @@ const menu = [
   { "name": "Panna Cotta ai Frutti di Bosco","id":"14","amount":"0", "amountMobile":"0" , "url": "./assets/img/dishes/panacotta.png", "category": "Dolce", "description": "Sahnedessert mit Beerensauce", "price": 6.90 },
   { "name": "Cannoli Siciliani","id":"15","amount":"0", "amountMobile":"0" , "url": "./assets/img/dishes/cannoli.png", "category": "Dolce", "description": "Knusprige Teigröllchen mit Ricottafüllung", "price": 7.20 }
 ]
-const categories = ["Antipasto", "Primo", "Secondo", "Contorno","Dolce"]
+const categories = ["Antipasto", "Primo", "Secondo", "Contorno","Dolce"];
 
 let basketData= [];
 let basketPrices = [];

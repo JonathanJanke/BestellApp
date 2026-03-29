@@ -56,7 +56,7 @@ function addToBasket(id){
         count++;
         dish.amount = count.toString()
         renderCount.innerHTML = "";
-        renderCount.innerHTML = getHTMLForCount(count);
+        renderCount.innerHTML = `${count}`;
         changeIcon(id);
     }
 
@@ -77,7 +77,7 @@ function reduceCount(id) {
         count--;
         dish.amount = count.toString();
         const renderCount= document.getElementById(`count${id}`);
-        renderCount.innerHTML = getHTMLForCount(count);
+        renderCount.innerHTML = `${count}`;
     }
     calcTotal(id);
     updateCartCount();

@@ -36,6 +36,7 @@
     padding: 16px;
     height: auto;
 
+    min-width: 300px;
     display: flex;
     flex-direction: column;
 }
