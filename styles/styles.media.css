@@ -1,5 +1,18 @@
-@media (max-width: 740px){
+@media (max-width: 891px){
+    .basket-dish{
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 800px){
     
+    #order{
+        width: 80%;
+    }
+
+    .basket-dish{
+        min-width: 200px;
+    }
     .menu-wrapper{
         flex-direction: column;
     }
@@ -53,5 +66,7 @@
         justify-content: center;
         height: 40px;
     }
+
+
 
 }

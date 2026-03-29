@@ -36,7 +36,7 @@
     padding: 16px;
     height: auto;
 
-    min-width: 300px;
+    min-width: 200px;
     display: flex;
     flex-direction: column;
 }
