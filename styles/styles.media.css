@@ -1,6 +1,6 @@
 @media (max-width: 1218px){
     .basket-dish{
-        min-width: 200px;
+        min-width: 300px;
     }
     
     .dish-info{
@@ -8,7 +8,25 @@
     }
 }
 
-@media (max-width: 891px){
+@media (max-width: 1195px){
+    .basket-dish{
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 1000px){
+    .basket-dish{
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 1040px){
+    .basket-dish{
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 1020px){
     .basket-dish{
         min-width: 150px;
     }

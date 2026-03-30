@@ -1,60 +1,52 @@
-
-function getHTMLForMenu (category) {
-    return `
-             <div class="category">
-                <div class="category-head">
-                    <div class="c-content"> 
-                        <img src="" alt="">
-                        <h2>${category}</h2>
-                    </div>
+function getHTMLForMobileBasket () {
+    return `            
+    <button class="close" onclick="closeDialog()">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 9.70342L2.03802 15.6654C1.81496 15.8885 1.53105 16 1.18631 16C0.841572 16 0.557668 15.8885 0.334601 15.6654C0.111534 15.4423 0 15.1584 0 14.8137C0 14.4689 0.111534 14.185 0.334601 13.962L6.29658 8L0.334601 2.03802C0.111534 1.81496 0 1.53105 0 1.18631C0 0.841572 0.111534 0.557668 0.334601 0.334601C0.557668 0.111534 0.841572 0 1.18631 0C1.53105 0 1.81496 0.111534 2.03802 0.334601L8 6.29658L13.962 0.334601C14.185 0.111534 14.4689 0 14.8137 0C15.1584 0 15.4423 0.111534 15.6654 0.334601C15.8885 0.557668 16 0.841572 16 1.18631C16 1.53105 15.8885 1.81496 15.6654 2.03802L9.70342 8L15.6654 13.962C15.8885 14.185 16 14.4689 16 14.8137C16 15.1584 15.8885 15.4423 15.6654 15.6654C15.4423 15.8885 15.1584 16 14.8137 16C14.4689 16 14.185 15.8885 13.962 15.6654L8 9.70342Z" fill="#FDEADC"/>
+        </svg>
+    </button>
+    <div class="mobile-basket">
+                <h2>Deine Bestellung</h2>
+                <div id="mobile-order">
                 </div>
-                <div id="dishes-${category}" class="dishes"
+                <span id="welcome-mobile">
+                    <div class="welcome-main">Noch nichts da.<br>Fang an und bestelle etwas leckeres.</div>
+                    <div class="welcome-footer">
+                        <svg width="128" height="129" viewBox="0 0 128 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M39.0333 123C35.7302 123 32.9026 121.825 30.5505 119.475C28.1983 117.125 27.0222 114.3 27.0222 111C27.0222 107.7 28.1983 104.875 30.5505 102.525C32.9026 100.175 35.7302 99 39.0333 99C42.3363 99 45.164 100.175 47.5161 102.525C49.8683 104.875 51.0444 107.7 51.0444 111C51.0444 114.3 49.8683 117.125 47.5161 119.475C45.164 121.825 42.3363 123 39.0333 123ZM99.0888 123C95.7857 123 92.9581 121.825 90.6059 119.475C88.2538 117.125 87.0777 114.3 87.0777 111C87.0777 107.7 88.2538 104.875 90.6059 102.525C92.9581 100.175 95.7857 99 99.0888 99C102.392 99 105.219 100.175 107.572 102.525C109.924 104.875 111.1 107.7 111.1 111C111.1 114.3 109.924 117.125 107.572 119.475C105.219 121.825 102.392 123 99.0888 123ZM33.9286 27L48.3419 57H90.3807L106.896 27H33.9286ZM28.2233 15H116.805C119.107 15 120.859 16.025 122.06 18.075C123.261 20.125 123.311 22.2 122.21 24.3L100.89 62.7C99.7894 64.7 98.3131 66.25 96.4613 67.35C94.6096 68.45 92.5828 69 90.3807 69H45.6394L39.0333 81H105.094C106.796 81 108.222 81.575 109.373 82.725C110.524 83.875 111.1 85.3 111.1 87C111.1 88.7 110.524 90.125 109.373 91.275C108.222 92.425 106.796 93 105.094 93H39.0333C34.5291 93 31.126 91.025 28.8239 87.075C26.5217 83.125 26.4216 79.2 28.5236 75.3L36.6311 60.6L15.0111 15H9.00555C7.30398 15 5.87766 14.425 4.7266 13.275C3.57553 12.125 3 10.7 3 9C3 7.3 3.57553 5.875 4.7266 4.725C5.87766 3.575 7.30398 3 9.00555 3H18.7646C19.8656 3 20.9166 3.3 21.9175 3.9C22.9184 4.5 23.6691 5.35 24.1696 6.45L28.2233 15Z" fill="#FDEADC"/>
+                        </svg>
+                    </div>
+                </span>
+                <div id="m-basket-footer">
                 </div>
-             </div>`
-}
-function getHTMLForDishes (dish, i, dishPrice) {
-    return `
-             <div class="dish" id="${i}">
-                <img src="${dish.url}">
-                <div class="dish-info">
-                    <div class="dish-info-head">
-                        <h2>${dish.name}</h2>
-                        <span class="price">${dishPrice}</span>
-                    </div>
-                    <div class="dish-info-main">
-                        <span>${dish.description}</span>
-                    </div>
-                    <div class="dish-info-footer">
-                        <button class="btn-addToBasket" onclick="addToBasket(${dish.id})">Add to basket</button>
-                    </div>
-             </div>`
+            </div>` 
 }
 
-function getHTMLForBasketDish (dish, id, dishPrice) {
+function getHTMLForMobileBasketDish (dish, id, dishPrice) {
     return `
              <div class="basket-dish">
-                    <div class="basket-dish-head" id="addbtn${id}">
+                    <div class="basket-dish-head" id="m-addbtn${id}">
                         <h2>${dish.name}</h2>
                     </div>
                 <div class="basket-dish-info-main">
                     <div class="adjust">
-                    <button id="remove${id}" class="remove" onclick="reduceCount(${id})">
+                    <button id="m-remove${id}" class="remove" onclick="reduceMobileCount(${id})">
                         <svg width="23px" height="21px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 21C6.45 21 5.97917 20.8042 5.5875 20.4125C5.19583 20.0208 5 19.55 5 19V6C4.71667 6 4.47917 5.90417 4.2875 5.7125C4.09583 5.52083 4 5.28333 4 5C4 4.71667 4.09583 4.47917 4.2875 4.2875C4.47917 4.09583 4.71667 4 5 4H9C9 3.71667 9.09583 3.47917 9.2875 3.2875C9.47917 3.09583 9.71667 3 10 3H14C14.2833 3 14.5208 3.09583 14.7125 3.2875C14.9042 3.47917 15 3.71667 15 4H19C19.2833 4 19.5208 4.09583 19.7125 4.2875C19.9042 4.47917 20 4.71667 20 5C20 5.28333 19.9042 5.52083 19.7125 5.7125C19.5208 5.90417 19.2833 6 19 6V19C19 19.55 18.8042 20.0208 18.4125 20.4125C18.0208 20.8042 17.55 21 17 21H7ZM17 6H7V19H17V6ZM10 17C10.2833 17 10.5208 16.9042 10.7125 16.7125C10.9042 16.5208 11 16.2833 11 16V9C11 8.71667 10.9042 8.47917 10.7125 8.2875C10.5208 8.09583 10.2833 8 10 8C9.71667 8 9.47917 8.09583 9.2875 8.2875C9.09583 8.47917 9 8.71667 9 9V16C9 16.2833 9.09583 16.5208 9.2875 16.7125C9.47917 16.9042 9.71667 17 10 17ZM14 17C14.2833 17 14.5208 16.9042 14.7125 16.7125C14.9042 16.5208 15 16.2833 15 16V9C15 8.71667 14.9042 8.47917 14.7125 8.2875C14.5208 8.09583 14.2833 8 14 8C13.7167 8 13.4792 8.09583 13.2875 8.2875C13.0958 8.47917 13 8.71667 13 9V16C13 16.2833 13.0958 16.5208 13.2875 16.7125C13.4792 16.9042 13.7167 17 14 17Z" fill="#363534"/>
                         </svg>
                     </button>
-                    <span id="count${id}">${dish.amount}</span>
-                    <button onclick="addToBasket(${id})">+</button>
+                    <span id="m-count${id}">${dish.amount}</span>
+                    <button onclick="addToMobileBasket(${id})">+</button>
                     </div>
-                    <span id="price${id}">${dishPrice}</span>
+                    <span id="m-price${id}">${dishPrice}</span>
                 </div> `
 }
 
-function getHTMLForBasketFooter () {
+function getHTMLForMobileBasketFooter () {
     return ` 
             <div class="subtotal"> 
                 <span>Zwischenpreis: </span> 
-                <span id="subtotal" >0 €</span>
+                <span id="m-subtotal" >0 €</span>
             </div>
             <div class="delivery">
                 <span>Liefergebühr: </span> 
@@ -62,15 +54,15 @@ function getHTMLForBasketFooter () {
             </div>
             <div class="total">
                 <span>Gesamtpreis: </span> 
-                <span id="total">0 €</span>
+                <span id="m-total">0 €</span>
             </div>
-            <button id="order-btn" onclick="openDialog()">Jetzt kaufen ( 0,00 €)</button>
+            <button id="m-order-btn" onclick="openDialog()">Jetzt kaufen ( 0,00 €)</button>
     `
 }
 
 function getHTMLForMsg() {
     return `
-                <span id="welcome">
+                <span id="mobile-welcome">
                     <div class="welcome-main">Noch nichts da.<br> Fang an und bestelle etwas leckeres.</div>
                     <div class="welcome-footer">
                         <svg width="128" height="129" viewBox="0 0 128 129" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,10 +72,9 @@ function getHTMLForMsg() {
                 </span>`
 }
 
-function getHTMLForBtn (id) {
+function getHTMLForMobileBtn (id) {
     return `
-            <svg class="delete" onclick="deleteFromBasket(${id})" width="40px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="delete" onclick="deleteFromMobileBasket(${id})" width="40px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 21C6.45 21 5.97917 20.8042 5.5875 20.4125C5.19583 20.0208 5 19.55 5 19V6C4.71667 6 4.47917 5.90417 4.2875 5.7125C4.09583 5.52083 4 5.28333 4 5C4 4.71667 4.09583 4.47917 4.2875 4.2875C4.47917 4.09583 4.71667 4 5 4H9C9 3.71667 9.09583 3.47917 9.2875 3.2875C9.47917 3.09583 9.71667 3 10 3H14C14.2833 3 14.5208 3.09583 14.7125 3.2875C14.9042 3.47917 15 3.71667 15 4H19C19.2833 4 19.5208 4.09583 19.7125 4.2875C19.9042 4.47917 20 4.71667 20 5C20 5.28333 19.9042 5.52083 19.7125 5.7125C19.5208 5.90417 19.2833 6 19 6V19C19 19.55 18.8042 20.0208 18.4125 20.4125C18.0208 20.8042 17.55 21 17 21H7ZM17 6H7V19H17V6ZM10 17C10.2833 17 10.5208 16.9042 10.7125 16.7125C10.9042 16.5208 11 16.2833 11 16V9C11 8.71667 10.9042 8.47917 10.7125 8.2875C10.5208 8.09583 10.2833 8 10 8C9.71667 8 9.47917 8.09583 9.2875 8.2875C9.09583 8.47917 9 8.71667 9 9V16C9 16.2833 9.09583 16.5208 9.2875 16.7125C9.47917 16.9042 9.71667 17 10 17ZM14 17C14.2833 17 14.5208 16.9042 14.7125 16.7125C14.9042 16.5208 15 16.2833 15 16V9C15 8.71667 14.9042 8.47917 14.7125 8.2875C14.5208 8.09583 14.2833 8 14 8C13.7167 8 13.4792 8.09583 13.2875 8.2875C13.0958 8.47917 13 8.71667 13 9V16C13 16.2833 13.0958 16.5208 13.2875 16.7125C13.4792 16.9042 13.7167 17 14 17Z" fill="#363534"/>
             </svg>`
 }
-

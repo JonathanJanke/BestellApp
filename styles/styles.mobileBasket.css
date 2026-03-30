@@ -2,3 +2,26 @@
     height: 600px;
     width: auto;
 }
+
+.mobile-basket{
+    max-height: 600px;
+    position: sticky;
+    top: 0;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 12px;
+    font-family: 'Palanquin-Medium';
+    color: #FDEADC;
+    min-height: 600px;
+}
+.mobile-basket > h2 {
+    margin: 20px 8px;
+}
+
+#mobile-order > .basket-dish{
+    min-width: 335px;
+}

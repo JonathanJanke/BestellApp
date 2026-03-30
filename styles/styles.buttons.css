@@ -44,3 +44,15 @@ button{
     border: none;
     border-radius: 12px;
 }
+
+#m-order-btn {
+    font-family: 'Palanquin-Medium';
+    font-size: 20px;
+    font-weight: 500;
+
+    background-color: #E76C1F;
+    color: white;
+
+    border: none;
+    border-radius: 12px;
+}
