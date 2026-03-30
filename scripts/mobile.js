@@ -143,9 +143,6 @@ function deleteFromMobileBasket (id) {
 
 function closeDialog () {
     const dialogRef = document.getElementById("mobile-basket");
-    const basket = document.getElementById("mobile-basket");
-
-    basket.innerHTML = "";
     dialogRef.close();
 }
 

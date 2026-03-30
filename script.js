@@ -161,8 +161,14 @@ function openDialog(){
         dialogRef.close();
         deleteBasket();
         updateCartCount()
-    }, 2000);
+    }, 5000);
     
+}
+
+function closeConfirmation(){
+    const dialogRef = document.getElementById("orderDialog");
+
+    dialogRef.close();
 }
 
 
