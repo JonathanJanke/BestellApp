@@ -68,7 +68,7 @@ function createNewCart (id) {
 }
 
 function updateCart (id,count) {
-        const pricespan = document.getElementById("price");
+        const pricespan = document.getElementById(`price${id}`);
         const renderCount= document.getElementById(`count${id}`);
         let dish = menu[id];
         count++;

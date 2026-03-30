@@ -46,7 +46,7 @@ function getHTMLForBasketDish (dish, id, dishPrice) {
                     <span id="count${id}">${dish.amount}</span>
                     <button onclick="addToBasket(${id})">+</button>
                     </div>
-                    <span id="price">${dishPrice}</span>
+                    <span id="price${id}">${dishPrice}</span>
                 </div> `
 }
 
