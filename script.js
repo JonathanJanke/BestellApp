@@ -13,7 +13,6 @@ function renderCategories () {
         menu.innerHTML += getHTMLForMenu(category, i);
     }
     renderDishes();
-    renderBasketFooter(total);
 }
 
 function renderDishes () {
@@ -31,41 +30,56 @@ function renderDishes () {
     }
 }
 
-function renderBasketFooter (total) {
+function renderBasketFooter () {
     const basketFooter = document.getElementById("basket-footer");
 
-    basketFooter.innerHTML = getHTMLForBasketFooter(total);
+    basketFooter.innerHTML = getHTMLForBasketFooter();
 }
 
 function addToBasket(id){
-    const basket = document.getElementById("order");
     let dish = menu[id];
     let counter = parseInt(dish.amount);
     let count = counter;
-    const msg = document.getElementById("welcome");
-    let dishPrice = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(dish.price);
+    renderBasketFooter();
 
     if(!basketData.includes(dish.name)){
+        createNewCart(id,dish,count)
+    }else{
+        updateCart(id, count)
+    }
+    calcTotal(id);
+    updateCartCount();
+
+}
+
+function createNewCart (id) {
+    const basket = document.getElementById("order");
+    const msg = document.getElementById("welcome");
+    let dish = menu[id];
+    let counter = parseInt(dish.amount);
+    let count = counter;
+    let dishPrice = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(dish.price);
+
     count++;
     dish.amount = count.toString()
     basketData.push(dish.name);
     basket.innerHTML += getHTMLForBasketDish(dish, id, dishPrice);
     msg.innerHTML = "";
-    }else{
-        const renderCount= document.getElementById(`count${id}`);
-        count++;
-        dish.amount = count.toString()
-        renderCount.innerHTML = "";
-        renderCount.innerHTML = `${count}`;
-        changeIcon(id);
-    }
-
-    
-
-    calcTotal(id);
-    updateCartCount();  
 }
 
+function updateCart (id,count) {
+        const pricespan = document.getElementById("price");
+        const renderCount= document.getElementById(`count${id}`);
+        let dish = menu[id];
+        count++;
+        dish.amount = count.toString()
+        let newprice = dish.amount * dish.price;
+        let dishPrice = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(newprice);
+        renderCount.innerHTML = "";
+        renderCount.innerHTML = `${count}`;
+        pricespan.innerHTML = `${dishPrice}`;
+        changeIcon(id);
+}
 
 function reduceCount(id) {
     let dish = menu[id];
@@ -87,25 +101,23 @@ function deleteFromBasket (id) {
     let dish = menu[id];
     let count = 0;
     const msg = document.getElementById("welcome");
+    const basketFooter = document.getElementById("basket-footer");
 
     dish.amount = count.toString();
     const basket = document.getElementById("order");
-    
     const bDataIndex = basketData.findIndex(basketData => basketData === menu[id].name);
-
     if (bDataIndex !== -1) {
     basketData.splice(bDataIndex, 1);
     }
-
     for (let i = 0; i < basket.children.length; i++){
         const name = basket.children[i].querySelector(".basket-dish-head h2").textContent;
         if (dish.name === name){
             basket.children[i].remove();
         }
     }
-
     if (basketData.length === 0) {
-        msg.innerHTML = "Deine Bestellung bitte."
+        msg.innerHTML = getHTMLForMsg();
+        basketFooter.innerHTML= "";
     }
     calcTotal(id);
     updateCartCount();
@@ -116,8 +128,12 @@ function calcTotal() {
         return total + item.amount * item.price;
     }, 0);
 
-    let eurSum =  new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(sum);
-    document.getElementById("total").innerHTML = eurSum;
+    if (basketData.length >= 1){
+        let eurSum =  new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(sum);
+        document.getElementById("total").innerHTML = eurSum;
+        document.getElementById("subtotal").innerHTML = eurSum;
+        document.getElementById("order-btn").innerHTML = `Jetzt kaufen (${eurSum})`;
+    }
 }
 
 function changeIcon (id){
@@ -154,6 +170,7 @@ function deleteBasket () {
     const msg = document.getElementById("welcome");
     const basket = document.getElementById("order");
     const total = document.getElementById("total");
+    const basketFooter = document.getElementById("basket-footer");
 
     basketData = [];
     basket.innerHTML = "";
@@ -164,7 +181,8 @@ function deleteBasket () {
     }
     let number = 0;
     total.innerHTML = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(number);
-    msg.innerHTML = "Deine Bestellung bitte."
+    msg.innerHTML = getHTMLForMsg();
+    basketFooter.innerHTML = "";
 }
 
 function updateCartCount() {

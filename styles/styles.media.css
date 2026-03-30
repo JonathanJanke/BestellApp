@@ -1,3 +1,9 @@
+@media (max-width: 1218px){
+    .basket-dish{
+        min-width: 200px;
+    }
+}
+
 @media (max-width: 891px){
     .basket-dish{
         min-width: 150px;
@@ -26,6 +32,7 @@
 
     .mobile-nav{
         display: flex;
+        width: 100%;
     }
 }
 .show{

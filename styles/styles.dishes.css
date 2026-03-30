@@ -9,11 +9,12 @@
 }
 .dish{
     display: flex;
-    justify-content: flex-start;
 
     width: 100%;
     max-width: 1440px;
-    background-color:#FDEADC
+    background-color:#FDEADC;
+
+    border-radius: 16px;
 }
 .dish > img {
     height: 200px;
@@ -22,8 +23,22 @@
 }
 
 .dish-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
     width: 100%;
     padding: 0 8px;
+}
+
+.dish-info-head{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price{
+    font-size: 24px;
 }
 
 .dish-info-footer{

@@ -119,19 +119,27 @@
 
 .mobile-nav{
     display: none;
-
     justify-content: center;
     padding: 12px 0;
     background-color: #363534;
     height: auto;
 }
-.mobile-nav > svg{
-    height: 80px;
-    width: 80px;
+
+.cart-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 12px;
 }
+
 .cart-container {
     position: relative;
     display: inline-block;
+}
+
+.cart-container > img {
+    height: 40px;
+    width: 40px;
 }
 
 .cart-icon {
