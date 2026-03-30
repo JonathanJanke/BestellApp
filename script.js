@@ -82,6 +82,7 @@ function updateCart (id,count) {
 }
 
 function reduceCount(id) {
+    const pricespan = document.getElementById(`price${id}`);
     let dish = menu[id];
     let counter = parseInt(dish.amount);
     let count = counter;
@@ -92,6 +93,9 @@ function reduceCount(id) {
         dish.amount = count.toString();
         const renderCount= document.getElementById(`count${id}`);
         renderCount.innerHTML = `${count}`;
+        let newprice = dish.amount * dish.price;
+        let dishPrice = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(newprice);
+        pricespan.innerHTML = `${dishPrice}`;
     }
     calcTotal(id);
     updateCartCount();
