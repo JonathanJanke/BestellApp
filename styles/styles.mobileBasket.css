@@ -4,7 +4,6 @@
 }
 
 .mobile-basket{
-    max-height: 600px;
     position: sticky;
     top: 0;
     color: white;
@@ -16,7 +15,6 @@
     border-radius: 12px;
     font-family: 'Palanquin-Medium';
     color: #FDEADC;
-    min-height: 600px;
 }
 .mobile-basket > h2 {
     margin: 20px 8px;
@@ -24,4 +22,14 @@
 
 #mobile-order > .basket-dish{
     min-width: 335px;
+}
+
+@media(max-width: 435px){
+    #mobile-order > .basket-dish{
+        min-width: 0;
+    }
+    
+    #mobile-order{
+        height: 96%;
+    }
 }

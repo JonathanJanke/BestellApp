@@ -56,7 +56,7 @@ function getHTMLForMobileBasketFooter () {
                 <span>Gesamtpreis: </span> 
                 <span id="m-total">0 €</span>
             </div>
-            <button id="m-order-btn" onclick="openDialog()">Jetzt kaufen ( 0,00 €)</button>
+            <button id="m-order-btn" onclick="closeDialog(); openDialog();">Jetzt kaufen ( 0,00 €)</button>
     `
 }
 

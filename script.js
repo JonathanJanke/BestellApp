@@ -156,21 +156,15 @@ function changeIcon (id){
 function openDialog(){
     const dialogRef = document.getElementById("orderDialog");
     dialogRef.showModal();
-    deleteBasket();
 
     setTimeout(() => {
-        closeDialog();
-    }, 5000);
+        dialogRef.close();
+        deleteBasket();
+        updateCartCount()
+    }, 2000);
+    
 }
 
-function closeDialog () {
-    const dialogRef = document.getElementById("orderDialog");
-    dialogRef.close();
-}
-
-function propagationHandler(event) {
-    event.stopPropagation();
-}
 
 function deleteBasket () {
     const msg = document.getElementById("welcome");
