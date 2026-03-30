@@ -49,7 +49,6 @@ function addToBasket(id){
     }
     calcTotal(id);
     updateCartCount();
-
 }
 
 function createNewCart (id) {
@@ -109,7 +108,7 @@ function deleteFromBasket (id) {
 
     dish.amount = count.toString();
     const basket = document.getElementById("order");
-    const bDataIndex = basketData.findIndex(basketData => basketData === menu[id].name);
+    const bDataIndex = basketData.findIndex(basketData => basketData === dish.name);
     if (bDataIndex !== -1) {
     basketData.splice(bDataIndex, 1);
     }
@@ -194,7 +193,27 @@ function updateCartCount() {
     countElement.textContent = basketData.length;
 }
 
-function showBasket() {
-    basket = document.getElementById("showBasket").classList.add("show");
-    basket = document.getElementById("basket").classList.add("show");
+function createNewMobileCard (id) {
+    const basket = document.getElementById("mobile-order");
+    const msg = document.getElementById("welcome-mobile");
+    let dish = menu[id];
+    let dishPrice = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(dish.price);
+
+    basket.innerHTML += getHTMLForBasketDish(dish, id, dishPrice);
+    msg.innerHTML = "";
+}
+
+function renderMobileDishes () {
+    for (let i = 0; i < basketData.length; i++) {
+        let indexFromDish = menu.findIndex(menu => menu.name === basketData[i]);
+        createNewMobileCard(indexFromDish);
+    }
+}
+
+function renderMobileBasket () {
+    const basket = document.getElementById("mobile-basket");
+
+    basket.innerHTML = getHTMLForMobileBasket();
+    basket.showModal();
+    renderMobileDishes();
 }

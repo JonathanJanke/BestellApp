@@ -2,6 +2,10 @@
     .basket-dish{
         min-width: 200px;
     }
+    
+    .dish-info{
+        padding-bottom: 12px;
+    }
 }
 
 @media (max-width: 891px){
@@ -14,6 +18,25 @@
     
     #order{
         width: 80%;
+    }
+    
+    .dish{
+        flex-direction: column;
+        align-items: center;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+
+    .dish-info{
+        font-size: 16px;
+    }
+
+    .dish-info-head{
+        font-size: 12px;
+    }
+
+    .dish-info-footer{
+        justify-content: center;
     }
 
     .basket-dish{
@@ -32,8 +55,13 @@
 
     .mobile-nav{
         display: flex;
+        position: fixed;
+        bottom: 0; 
+        left: 0;
         width: 100%;
+        height: auto;
     }
+
 }
 .show{
     display: flex;
@@ -73,7 +101,4 @@
         justify-content: center;
         height: 40px;
     }
-
-
-
 }
