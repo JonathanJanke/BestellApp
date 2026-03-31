@@ -156,11 +156,11 @@ function changeIcon (id){
 function openDialog(){
     const dialogRef = document.getElementById("orderDialog");
     dialogRef.showModal();
+    deleteBasket();
+    updateCartCount();
 
     setTimeout(() => {
         dialogRef.close();
-        deleteBasket();
-        updateCartCount()
     }, 5000);
     
 }
